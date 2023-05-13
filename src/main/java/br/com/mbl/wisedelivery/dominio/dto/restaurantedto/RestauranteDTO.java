@@ -3,6 +3,8 @@ package br.com.mbl.wisedelivery.dominio.dto.restaurantedto;
 import java.math.BigDecimal;
 import java.util.Set;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import br.com.mbl.wisedelivery.dominio.RestauranteCategoria;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -39,6 +41,8 @@ public class RestauranteDTO {
     @Size(max = 14)
     @Pattern(regexp = "[0-9]{14}")
     private String cnpj;
+    
+    private MultipartFile arquivoLogotipo;
 
     private String logotipo;
 
