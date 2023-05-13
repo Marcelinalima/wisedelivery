@@ -9,16 +9,22 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "categoria_restaurante")
 public class RestauranteCategoria {
      
-    @Getter
+    @Getter @Setter
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
@@ -33,7 +39,7 @@ public class RestauranteCategoria {
     
     @Getter @Setter
     @ManyToMany(mappedBy = "categorias")
-    private  Set<Restaurante> restaurantes = new HashSet<>();
+    private  Set<Restaurante> restaurantes= new HashSet<>();
 
     
 
