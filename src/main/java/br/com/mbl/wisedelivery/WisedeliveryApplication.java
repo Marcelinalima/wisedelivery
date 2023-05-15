@@ -9,16 +9,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import br.com.mbl.wisedelivery.dominio.RestauranteCategoria;
 import br.com.mbl.wisedelivery.repository.RestauranteCategoriaRepository;
-import br.com.mbl.wisedelivery.service.impl.ImageServiceImpl;
-import lombok.extern.log4j.Log4j2;
+import br.com.mbl.wisedelivery.utils.ServiceUtils;
 
-@Log4j2
+
+
 @SpringBootApplication
 public class WisedeliveryApplication implements CommandLineRunner{
 
 	@Autowired
 	private RestauranteCategoriaRepository restauranteCategoriaRepository;
-
+    
+	@Autowired
+    private ServiceUtils utils;
 	public static void main(String[] args) {
 		SpringApplication.run(WisedeliveryApplication.class, args);
 	}
@@ -43,7 +45,9 @@ public class WisedeliveryApplication implements CommandLineRunner{
 
 	   restauranteCategoriaRepository.saveAll(List.of(cat1, cat2, cat3, cat4));
 
-	   log.info(ImageServiceImpl.criarPastaDeUpload());
+	  
+
+	   utils.consultaCep("88056750");
 
 	}
 
