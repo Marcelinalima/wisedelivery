@@ -1,6 +1,5 @@
 package br.com.mbl.wisedelivery.dominio;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.Entity;
@@ -39,7 +38,7 @@ public class RestauranteCategoria {
     
     @Getter @Setter
     @ManyToMany(mappedBy = "categorias")
-    private  Set<Restaurante> restaurantes= new HashSet<>();
+    private  Set<Restaurante> restaurantes;
 
     
 
