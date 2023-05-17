@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.mbl.wisedelivery.dominio.Cliente;
+import br.com.mbl.wisedelivery.dominio.cliente.Cliente;
 
 
 public interface ClienteRepository  extends JpaRepository<Cliente , Long>{

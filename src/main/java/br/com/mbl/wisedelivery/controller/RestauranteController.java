@@ -34,6 +34,12 @@ public class RestauranteController {
         return"restaurante-cadastro";
 
     }
+    @GetMapping("/admin/dashboard")
+    public String home(Model model, String restauranteEmail){
+        
+        return "restaurante-dashboard";
+
+    }
 
     
 }

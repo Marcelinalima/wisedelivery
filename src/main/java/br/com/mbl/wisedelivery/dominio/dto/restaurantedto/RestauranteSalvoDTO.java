@@ -2,7 +2,7 @@ package br.com.mbl.wisedelivery.dominio.dto.restaurantedto;
 
 import java.util.Set;
 
-import br.com.mbl.wisedelivery.dominio.RestauranteCategoria;
+import br.com.mbl.wisedelivery.dominio.restaurante.RestauranteCategoria;
 import lombok.Data;
 
 @Data

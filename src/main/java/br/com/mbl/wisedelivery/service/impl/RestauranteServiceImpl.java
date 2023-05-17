@@ -6,10 +6,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.mbl.wisedelivery.dominio.Restaurante;
-import br.com.mbl.wisedelivery.dominio.RestauranteCategoria;
 import br.com.mbl.wisedelivery.dominio.dto.restaurantedto.RestauranteDTO;
 import br.com.mbl.wisedelivery.dominio.dto.restaurantedto.RestauranteSalvoDTO;
+import br.com.mbl.wisedelivery.dominio.restaurante.Restaurante;
+import br.com.mbl.wisedelivery.dominio.restaurante.RestauranteCategoria;
 import br.com.mbl.wisedelivery.repository.RestauranteCategoriaRepository;
 import br.com.mbl.wisedelivery.repository.RestauranteRepository;
 import br.com.mbl.wisedelivery.service.RestauranteService;
