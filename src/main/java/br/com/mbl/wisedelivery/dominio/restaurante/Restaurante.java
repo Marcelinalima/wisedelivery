@@ -44,7 +44,7 @@ public class Restaurante  extends Usuario{
         inverseJoinColumns = @JoinColumn(name= "categoria_restaurante_id")
     )
     @ToString.Exclude
-    private  Set<RestauranteCategoria> categorias = new HashSet<>(0);
+    private  Set<RestauranteCategoria> categorias = new HashSet<>();
     
     @OneToMany(mappedBy = "restaurante")
     private Set<ItemCardapio> cardapio =  new HashSet<>();

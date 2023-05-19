@@ -27,20 +27,23 @@ public class RestauranteController {
         model.addAttribute("restaurante", new RestauranteLoginDTO());
         return "login-restaurante";
    }
-   @PostMapping("logar") 
-   public String logar(@ModelAttribute("restaurante")RestauranteLoginDTO restaurante){
+   
+@PostMapping("logar") 
+   public String logar(@ModelAttribute("restaurante")RestauranteLoginDTO restaurante, Model model){
     if(!getRestauranteService().logar(restaurante)){
-        return"login";
+        return"login-restaurante";
 
     }
-    return "restaurante-dashboard";
-   }
+    var restauranteId = getRestauranteService().procurarRestauranteIdPeloEmail(restaurante.getEmail());
+    model.addAttribute("restauranteId",  restauranteId);
+    return  home(model);
 
+   }
 
     @GetMapping("form-cadastro")
     String formCadastroRestaurante(Model model){
-        model.addAttribute("restaurante", new RestauranteDTO());
         model.addAttribute("categorias",restauranteService.pegaTodasAsCategorias());
+        model.addAttribute("restaurante", new RestauranteDTO());
         return "restaurante-cadastro";
     }
 
@@ -50,6 +53,10 @@ public class RestauranteController {
         return"restaurante-cadastro";
 
     }
+    @GetMapping("/admin/dashboard")
+    public String home(Model model){
 
+        return "restaurante-dashboard";
+    }
     
 }

@@ -27,6 +27,7 @@ public class CategoriaItem {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
+    
     private String nome;
     private String imagem;
 

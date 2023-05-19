@@ -35,10 +35,11 @@ public class ItemCardapio {
 
     private String nome;
     private String descricao;
+    private String categoria;
     private String imagem;
     private BigDecimal preco;
     private boolean destaque;
-
+    
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name ="item_relacao_categoria",

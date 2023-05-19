@@ -1,6 +1,7 @@
 package br.com.mbl.wisedelivery.dominio.dto.restaurantedto;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -53,6 +54,6 @@ public class RestauranteDTO {
     private Integer tempoEntrega;
 
     
-    private  Set<RestauranteCategoria> categorias;
+    private  Set<RestauranteCategoria> categorias = new HashSet<>();
 
 }

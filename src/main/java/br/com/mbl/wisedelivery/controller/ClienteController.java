@@ -25,11 +25,11 @@ import lombok.extern.log4j.Log4j2;
 
 public class ClienteController {
 
-@Autowired
-@Getter private ClienteService clienteService;
+    @Autowired
+    @Getter private ClienteService clienteService;
 
-@Autowired
-@Getter private Validator<ClienteDTO> validator;
+    @Autowired
+    @Getter private Validator<ClienteDTO> validator;
 
     @GetMapping("form-cadastro")
     public String formCadastroCliente( Model model){
@@ -62,6 +62,10 @@ public class ClienteController {
            return "login";
         }
         return "cliente-home";
+
     }
-    
+     @GetMapping("/home")
+     public String home (Model model){
+        return "cliente-home";
+     }
 }
