@@ -94,6 +94,7 @@ public class WisedeliveryApplication implements CommandLineRunner{
 		rest.setCnpj("111111111111");
 		rest.setTelefone("21999999999");
 		rest.setSenha("1234");
+		
 		rest.setCategorias(Set.of(cat1, cat2));
         
 
@@ -103,6 +104,7 @@ public class WisedeliveryApplication implements CommandLineRunner{
 		rest2.setCnpj("111111111111");
 		rest2.setTelefone("21999999999");
 		rest2.setSenha("1234");
+
 		rest2.setCategorias(Set.of(cat3, cat4));
 
 		restauranteRepository.saveAll(List.of(rest, rest2));

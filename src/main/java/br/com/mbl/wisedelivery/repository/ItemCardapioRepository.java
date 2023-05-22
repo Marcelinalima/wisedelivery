@@ -7,5 +7,6 @@ import br.com.mbl.wisedelivery.dominio.restaurante.ItemCardapio;
 import br.com.mbl.wisedelivery.dominio.restaurante.Restaurante;
 
 public interface ItemCardapioRepository extends JpaRepository<ItemCardapio, Long>{
+    
     List<ItemCardapio> findByRestaurante(Restaurante restaurante);
 }

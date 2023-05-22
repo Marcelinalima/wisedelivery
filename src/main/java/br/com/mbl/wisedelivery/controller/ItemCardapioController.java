@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.mbl.wisedelivery.dominio.dto.restaurantedto.ItemCardapioDTO;
 import br.com.mbl.wisedelivery.service.ItemCardapioService;
 import lombok.Getter;
-
-
-
 @RequestMapping("admin/itens-cardapio")
 @Controller
 public class ItemCardapioController {
@@ -26,7 +23,7 @@ public class ItemCardapioController {
     public String formItemCardapio(Model model, @PathVariable("restauranteId") Long restauranteId){
         model.addAttribute("itens", itemCardapioService.procurarTodosOsItensPeloIdDoRestaurante(restauranteId));
         model.addAttribute("categorias", itemCardapioService.pegarTodasAsCategorias());
-        model.addAttribute("itemCardapioService", new ItemCardapioDTO());
+        model.addAttribute("itemCardapio", new ItemCardapioDTO());
         return "restaurante-dashboard-itemcardapio";  
         
     }

@@ -42,7 +42,7 @@ public class RestauranteController {
 
     @GetMapping("form-cadastro")
     String formCadastroRestaurante(Model model){
-        model.addAttribute("categorias",restauranteService.pegaTodasAsCategorias());
+        model.addAttribute("categorias", restauranteService.pegaTodasAsCategorias());
         model.addAttribute("restaurante", new RestauranteDTO());
         return "restaurante-cadastro";
     }

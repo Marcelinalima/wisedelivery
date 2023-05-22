@@ -28,8 +28,10 @@ public class ItemCardapioServiceServiceImpl implements ItemCardapioService {
     @Autowired @Getter
     private CategoriaItemRepository categoriaItemRepository;
 
+
     @Autowired @Getter
     private RestauranteRepository restauranteRepository;
+
 
     @Override
     public ItemCardapioDTO salvar(ItemCardapioDTO dto) {
@@ -37,6 +39,7 @@ public class ItemCardapioServiceServiceImpl implements ItemCardapioService {
         dto = deItemCardapioParaItemCardapioDTO(itemCardapio);
         return dto;
     }
+
 
     @Override
     public ItemCardapioDTO procurarPeloId(Long id) {
@@ -48,6 +51,7 @@ public class ItemCardapioServiceServiceImpl implements ItemCardapioService {
     public List<ItemCardapioDTO> procurarTodos() {
         return getItemCardapioRepository().findAll().stream().map(item -> deItemCardapioParaItemCardapioDTO(item)).toList();
     }
+
 
     @Override
     public void deletar(Long id) {
@@ -75,11 +79,11 @@ public class ItemCardapioServiceServiceImpl implements ItemCardapioService {
         ItemCardapioTabelaDTO dto = new ItemCardapioTabelaDTO();
         BeanUtils.copyProperties(itemCardapio, dto, "restaurante, categorias");
         dto.setRestauranteId(itemCardapio.getRestaurante().getId());
-        
+
         dto.setCategorias(itemCardapio.getCategorias().stream().map(
             categoria -> categoria.getNome()
         ).toList());
-
+        
         return dto;
     }
 

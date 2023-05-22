@@ -21,26 +21,36 @@
       }
     </style>
     
-      <script th:inline="javascript">
-        var restaurante =/*[[${restauranteId}]]*/'';
-        if(restaurante){
-          localStorage.setItem('restauranteId', restauranteId.id)
-          console.log("ID RESTAURANTE OK")
-        }else console.log("ID RESTAURANTE NOK");
-        
-      </script>
+    <script th:inline="javascript">
+      var restaurante = /*[[${restauranteId}]]*/ '';
+      if(restaurante) {
+        localStorage.setItem('restauranteId', restaurante.id)
+      } else console.log("ID RESTAURANTE NOK");
 
+      document.addEventListener('DOMContentLoaded', function() {     
+
+        var restauranteId = localStorage.getItem('restauranteId');
+        if(restauranteId){ 
+          var link = document.getElementById('link-itens-cardapio');
+          var href = link.getAttribute('href');
+          link.setAttribute('href', href + '/' + restauranteId);
+        }
+        else console.log('ERRO: RESTAURANTE ID VAZIO');
+
+      })
+
+    </script>
     <!-- Custom styles for this template -->
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
-    <link  th:href="@{/css/dashboard.css}" rel="stylesheet">
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet">
   </head>
   <body>
     
 <nav th:replace="~{fragmentos :: dashboard-navbar}"></nav>
-
+  <!-- Custom styles for this template -->
+  
 <div class="container-fluid">
     <div class="row">
-
 
 <nav th:replace="~{fragmentos :: sidebarMenu}"></nav>
 
